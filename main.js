@@ -1,10 +1,12 @@
-const express=require('express');
-const app=express();
-const port=process.env.PORT || 8000;
+const express = require("express");
 
-app.get('/',(req,res)=>{
-    return res.json({message: 'Hello I am node.js in container'});
+const app = express();
+const PORT = 3000;
+
+app.get("/", (req, res) => {
+    res.send("Hello from Docker + Node.js!");
 });
-app.listen(port,()=>{
-    console.log(`Server is running on port ${port}`);
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
